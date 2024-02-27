@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../static/styles.css">
-</head>
-<body>
-    <h1>CALL AUTHENTICATION PROTOCOL</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Integrity Guidelines</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #ba0c0c;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #54e311;
+      }
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        color: #b5f826;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        padding: 0.5rem 0;
+      }
+      li::before {
+        content: "\25CF";
+        color: #4a86e8;
+        margin-right: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Message Integrity Guidelines</h1>
+    <section>
+      <h2>1. Define Requirements and Threats</h2>
+      <ul>
+        <li>
+          Evaluate the value of the message: Understand the sensitivity of the
+          information being transmitted.
+        </li>
+        <li>
+          Identify potential threats: Consider various scenarios where message
+          integrity could be compromised.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>2. Implement Integrity Controls</h2>
+      <ul>
+        <li>
+          Cryptographic Hashing: Employ algorithms like SHA-256 or SHA-3 to
+          generate a unique fingerprint (hash) of the message before
+          transmission.
+        </li>
+        <li>
+          Digital Signatures: Utilize digital signatures, where the sender uses
+          their private key to sign the message, creating a unique signature.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>3. Verify Message Integrity</h2>
+      <ul>
+        <li>
+          Hash verification: Upon receiving a message, the receiver calculates
+          its own hash and compares it to the received hash.
+        </li>
+        <li>
+          Signature verification: If digital signatures are used, the receiver
+          validates the signature using the sender's public key.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>4. Additional Considerations</h2>
+      <ul>
+        <li>
+          Key Management: Implement secure key management practices for
+          cryptographic algorithms.
+        </li>
+        <li>
+          Logging and Monitoring: Maintain logs of message transmission and
+          verification activities.
+        </li>
+        <li>
+          User Education: Educate users about the importance of message
+          integrity and suspicious indicators.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>5. Standards and Best Practices</h2>
+      <ul>
+        <li>
+          Align with relevant industry standards and best practices, such as
+          those set by NIST or ISO.
+        </li>
+        <li>
+          Regularly review and update your message integrity assessment
+          procedures as technologies and threats evolve.
+        </li>
+      </ul>
+    </section>
+  </body>
 </html>
